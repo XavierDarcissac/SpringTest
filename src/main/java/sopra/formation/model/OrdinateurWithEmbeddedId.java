@@ -19,6 +19,13 @@ public class OrdinateurWithEmbeddedId {
 	public OrdinateurWithEmbeddedId() {
 		super();
 	}
+	
+	public OrdinateurWithEmbeddedId(int ram, boolean ssd, String cpu) {
+		super();
+		this.ram = ram;
+		this.ssd = ssd;
+		this.cpu = cpu;
+	}
 
 	public OrdinateurId getId() {
 		return id;

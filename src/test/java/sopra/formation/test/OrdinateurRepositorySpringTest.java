@@ -84,7 +84,7 @@ public class OrdinateurRepositorySpringTest {
 		o1Find = ordinateurRepo.findById(new OrdinateurId(o1.getSociete(), o1.getCode()));
 
 		Assert.assertNull(o1Find);
-
+		System.out.println("delet "+ordinateurRepo.findAll().size());
 //		if(o1Find != null) {
 //			Assert.fail("La suppression de la matière a échouée");
 //		}
@@ -95,13 +95,13 @@ public class OrdinateurRepositorySpringTest {
 	@Test
 	public void findAll() {
 		System.out.println("testFindAll Début ###################");
-
+		System.out.println("findall"+ordinateurRepo.findAll().size());
 		int sizeStart = ordinateurRepo.findAll().size();
 
 		Ordinateur o1 = new Ordinateur("AJC","166", 8,true, "I7");
-
+		System.out.println("findallllll  "+ordinateurRepo.findAll().size());
 		o1 = ordinateurRepo.save(o1);
-
+		System.out.println("findallllll  "+ordinateurRepo.findAll().size());
 		Ordinateur o2 = new Ordinateur("SOPRA","55", 16,false, "I23");
 
 		o2 = ordinateurRepo.save(o2);
@@ -109,7 +109,7 @@ public class OrdinateurRepositorySpringTest {
 		int sizeEnd = ordinateurRepo.findAll().size();
 
 		Assert.assertEquals(2, sizeEnd - sizeStart);
-
+		
 		System.out.println("testFindAll Fin ###################");
 	}
 
